@@ -1,4 +1,4 @@
-# GIF Celebration
+# GIF Celebration Action
 
 A GitHub action that celebrates your merges with a GIF.
 
