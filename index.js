@@ -19,9 +19,9 @@ try {
     .then(res => {
       const gifUrl = res.data.image_url;
       octokit.issues.createComment({
-        ..github.context.repo,
+        ...github.context.repo,
         issue_number: github.context.issue.number,
-        body: `![](${gifUrl})`,
+        body: `![](${gifUrl})`
       });
     })
     .catch(e => core.setFailed(error.message));
