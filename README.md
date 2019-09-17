@@ -13,5 +13,5 @@ A GitHub action that celebrates your merges with a GIF.
 ```yml
 uses: gabro/gif-celebration-action
 with:
-  github-token: "abcdefghilmnopqrstuvz1234567890"
+  github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
