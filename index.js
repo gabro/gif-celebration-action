@@ -17,18 +17,11 @@ try {
     .then(res => res.json())
     .then(res => {
       const gifUrl = res.data.image_url;
-      console.log(github.context);
-
-      if (
-        github.context.payload.pull_request &&
-        github.context.payload.pull_request.merged
-      ) {
-        octokit.issues.createComment({
-          repo: github.context.repo,
-          issue_number: github.context.issue.number,
-          body: `![](${gifUrl})`
-        });
-      }
+      octokit.issues.createComment({
+        repo: github.context.repo,
+        issue_number: github.context.issue.number,
+        body: `![](${gifUrl})`
+      });
     })
     .catch(e => core.setFailed(error.message));
 } catch (error) {
