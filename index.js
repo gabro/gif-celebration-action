@@ -11,9 +11,11 @@ try {
   const gifTags = ["happy", "excited", "win", "yes", "cheering", "thumbs-up"];
   const gifTag = gifTags[Math.floor(Math.random() * gifTags.length)];
 
-  const gifUrl = (await (await fetch(
+  const gifUrl = await fetch(
     `http://api.giphy.com/v1/gifs/random?api_key=${giphyApiKey}&tag=${gifTag}`
-  )).json()).data.image_url;
+  )
+    .then(res => res.json())
+    .then(res => res.data.image_url);
 
   console.log(github.context);
 
