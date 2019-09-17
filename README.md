@@ -25,7 +25,6 @@ jobs:
       - name: Celebrate
         id: celebrate
         uses: gabro/gif-celebration-action@master
-        if: github.action == 'closed' && github.pull_request.merged == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
