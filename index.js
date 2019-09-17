@@ -11,24 +11,26 @@ try {
   const gifTags = ["happy", "excited", "win", "yes", "cheering", "thumbs-up"];
   const gifTag = gifTags[Math.floor(Math.random() * gifTags.length)];
 
-  const gifUrl = await fetch(
+  fetch(
     `http://api.giphy.com/v1/gifs/random?api_key=${giphyApiKey}&tag=${gifTag}`
   )
     .then(res => res.json())
-    .then(res => res.data.image_url);
+    .then(res => {
+      const gifUrl = res.data.image_url;
+      console.log(github.context);
 
-  console.log(github.context);
-
-  if (
-    github.context.payload.pull_request &&
-    github.context.payload.pull_request.merged
-  ) {
-    octokit.issues.createComment({
-      repo: github.context.repo,
-      issue_number: github.context.issue.number,
-      body: `![](${gifUrl})`
-    });
-  }
+      if (
+        github.context.payload.pull_request &&
+        github.context.payload.pull_request.merged
+      ) {
+        octokit.issues.createComment({
+          repo: github.context.repo,
+          issue_number: github.context.issue.number,
+          body: `![](${gifUrl})`
+        });
+      }
+    })
+    .catch(e => core.setFailed(error.message));
 } catch (error) {
   core.setFailed(error.message);
 }
