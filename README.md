@@ -27,5 +27,4 @@ jobs:
         uses: gabro/gif-celebration-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          giphy-api-key: ...
 ```
