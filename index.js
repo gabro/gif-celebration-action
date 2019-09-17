@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 
 try {
   const token = core.getInput("github-token");
-  const octokit = new github.GitHub(myToken);
+  const octokit = new github.GitHub(token);
   const context = github.context;
   github.context.eventName === "PullRequestEvent";
   const giphyApiKey = core.getInput("giphy-api-key");
