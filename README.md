@@ -5,6 +5,7 @@ A GitHub action that celebrates your merges with a GIF.
 ## Inputs
 
 ### `github-token`
+GitHub token to post the comment. It can be set to `${{ secrets.GITHUB_TOKEN  }}`
 
 ### `giphy-api-key`
 
