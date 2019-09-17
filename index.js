@@ -15,6 +15,8 @@ try {
     `http://api.giphy.com/v1/gifs/random?api_key=${giphyApiKey}&tag=${gifTag}`
   )).json()).data.image_url;
 
+  console.log(github.context);
+
   if (
     github.context.payload.pull_request &&
     github.context.payload.pull_request.merged

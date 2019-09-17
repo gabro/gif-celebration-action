@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: Celebrate
         id: celebrate
-        uses: gabro/gif-celebrate-action@master
+        uses: gabro/gif-celebration-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
