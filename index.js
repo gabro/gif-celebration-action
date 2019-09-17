@@ -10,6 +10,8 @@ try {
   const gifTags = ["happy", "excited", "win", "yes", "cheering", "thumbs-up"];
   const gifTag = gifTags[Math.floor(Math.random() * gifTags.length)];
 
+  console.log(github
+
   fetch(
     `http://api.giphy.com/v1/gifs/random?api_key=${giphyApiKey}&tag=${gifTag}`
   )
