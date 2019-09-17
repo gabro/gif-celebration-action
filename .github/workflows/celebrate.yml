@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    type: closed
+
+jobs:
+  celebrate:
+    runs-on: ubuntu-latest
+    name: Celebrate merged PRs
+    steps:
+      - name: Celebrate
+        id: celebrate
+        uses: gabro/gif-celebrate-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
