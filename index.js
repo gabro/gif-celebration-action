@@ -22,7 +22,7 @@ try {
         body: `![](${gifUrl})`
       });
     })
-    .catch(e => core.setFailed(error.message));
+    .catch(e => core.setFailed(e.message));
 } catch (error) {
   core.setFailed(error.message);
 }
