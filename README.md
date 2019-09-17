@@ -8,6 +8,8 @@ A GitHub action that celebrates your merges with a GIF.
 
 ### `giphy-api-key`
 
+Giphy API key. It defaults to the public beta one if not provided.
+
 ## Example usage
 
 ```yml
