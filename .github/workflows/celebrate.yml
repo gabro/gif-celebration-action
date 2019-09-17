@@ -1,6 +1,4 @@
-on:
-  pull_request:
-    type: closed
+on: [pull_request]
 
 jobs:
   celebrate:
