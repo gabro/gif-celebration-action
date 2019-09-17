@@ -1,0 +1,13 @@
+name: "GIF Celebration"
+description: "Celebrate your merges with a happy GIF"
+inputs:
+  github-token:
+    description: "GitHub Token for posting the GIF"
+    required: true
+  giphy-api-key:
+    description: "Giphy API key"
+    required: true
+    default: dc6zaTOxFJmzC # Giphy public beta key
+runs:
+  using: "node12"
+  main: "index.js"
